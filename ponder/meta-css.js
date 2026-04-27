@@ -27,5 +27,28 @@ if (true) {
     console.log(student); //works just fine, it's being accessed within the block
 }
 console.log(course); //works fine, course is global
-console.log(student); //does not work, can't access a block variable outside the block
+//console.log(student); //does not work, can't access a block variable outside the block
                     
+
+const title = document.querySelector('h1');
+console.log(title);
+
+// title.textContent = "Web Page Components";
+
+
+// document.querySelector('#topics').style.color = 'red';
+const topics = document.querySelector('#topics');
+topics.style.color = 'purple';
+
+const wrapper = document.getElementById('content');
+wrapper.style.backgroundColor = 'peachpuff';
+
+let list = document.querySelector('.list');
+list.style.border = '3px solid black';
+
+let para = document.querySelector('p');
+para.style.fontSize = '3em';
+para.classList.add('background');
+
+let img = document.querySelector('img');
+img.setAttribute('src', 'images/logo.jpg');
