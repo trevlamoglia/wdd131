@@ -54,8 +54,7 @@ let img = document.querySelector('img');
 img.setAttribute('src', 'images/logo.jpg')
 
 
-
-
+// DROPDOWN EXAMPLE
 const dropdown = document.querySelector('#webdevlist');
 const html = document.querySelector('#html');
 const css = document.querySelector('#css');
