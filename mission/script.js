@@ -11,8 +11,13 @@ function changeTheme() {
         document.body.style.backgroundColor = 'black';
         logo.setAttribute('src', 'byui-logo-dark.png');
         pageContent.style.color = 'white';
-    } else {
+    } else if (current === 'light') {
         // code for changes to colors and logo
+        document.body.style.backgroundColor = 'white';
+        logo.setAttribute('src', 'byui-logo-blue.webp');
+        pageContent.style.color = 'black';
+    } else {
+        // default
         document.body.style.backgroundColor = 'white';
         logo.setAttribute('src', 'byui-logo-blue.webp');
         pageContent.style.color = 'black';
