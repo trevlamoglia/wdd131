@@ -15,5 +15,6 @@ function changeTheme() {
         // code for changes to colors and logo
         document.body.style.backgroundColor = 'white';
         logo.setAttribute('src', 'byui-logo-blue.webp');
+        pageContent.style.color = 'black';
     }
 }           
