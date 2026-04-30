@@ -6,7 +6,7 @@ selectElem.addEventListener('change', changeTheme);
 
 function changeTheme() {
     let current = selectElem.value;
-    if (current == 'dark') {
+    if (current === 'dark') {
         // code for changes to colors and logo
         document.body.style.backgroundColor = 'black';
         logo.setAttribute('src', 'byui-logo-dark.png');
@@ -17,4 +17,4 @@ function changeTheme() {
         logo.setAttribute('src', 'byui-logo-blue.webp');
         pageContent.style.color = 'black';
     }
-}           
+}
