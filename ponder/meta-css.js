@@ -35,8 +35,8 @@ console.log(title);
 
 // title.textContent = "Web Page Components";
 
-
-// document.querySelector('#topics').style.color = 'red';
+// PLAY AROUND IN CLASS
+document.querySelector('#topics').style.color = 'red';
 const topics = document.querySelector('#topics');
 topics.style.color = 'purple';
 
@@ -51,4 +51,20 @@ para.style.fontSize = '3em';
 para.classList.add('background');
 
 let img = document.querySelector('img');
-img.setAttribute('src', 'images/logo.jpg');
+img.setAttribute('src', 'images/logo.jpg')
+
+
+
+
+const dropdown = document.querySelector('#webdevlist');
+const html = document.querySelector('#html');
+const css = document.querySelector('#css');
+const js = document.querySelector('#js');
+
+dropdown.addEventListener('change', function() {
+    html.style.color = 'purple';
+    css.style.color = 'purple';
+    js.style.color = 'purple';
+    let codeValue = dropdown.value;
+    document.getElementById(codeValue).style.color = 'red';
+}); 
