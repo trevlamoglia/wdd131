@@ -21,4 +21,8 @@ function changeTheme() {
         pageContent.style.fontFamily = "Georgia, serif";
     }
 }
-          
+
+let title = document.querySelector('h1');
+title.addEventListener('click', function() {
+    alert('You clicked the title!');
+});

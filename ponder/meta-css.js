@@ -33,6 +33,11 @@ console.log(course); //works fine, course is global
 const title = document.querySelector('h1');
 console.log(title);
 
+// toggle the color of the title when it's clicked
+title.addEventListener('click', function() {
+    title.style.color = 'red';
+});
+
 // title.textContent = "Web Page Components";
 
 // PLAY AROUND IN CLASS
