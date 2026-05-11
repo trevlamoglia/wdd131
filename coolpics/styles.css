@@ -57,6 +57,7 @@ footer {
     text-align: center;
 }
 
+/* Tablet CSS */
 @media screen and (max-width: 900px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
@@ -73,6 +74,7 @@ footer {
     }
 }
 
+/* Mobile CSS */
 @media screen and (max-width: 600px) {
     .gallery {
         grid-template-columns: 1fr;
