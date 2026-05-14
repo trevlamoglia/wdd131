@@ -94,9 +94,9 @@ dialog img {
 }
 .close-viewer {
     position: absolute;
-    top: 10vh;
-    right: 30vh;
-    padding: 3px 6px;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
     font-size: 1.5em;
     cursor: pointer;
 }
