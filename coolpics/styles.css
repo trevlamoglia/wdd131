@@ -2,30 +2,55 @@
 
 body {
   font-family: Roboto, sans-serif;
+  margin: 0;
 }
 
 /* Header CSS */
 header {
-    background-color: #2681dc;
+    background: #2681dc;
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+header h1 {
+    margin-bottom: 15px;
 }
 nav {
     display: flex;
     justify-content: center;
+    gap: 15px;
 }
 nav a {
     padding: 20px;
     color: white;
-    text-align: center;
+    text-decoration: none;
 }
 .menu-btn {
     cursor: pointer;
     border: none;
     background-color: transparent;
     display: none;
+}
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 5px auto;
+    transition: 0.4s;
+}
+
+/* Hamburger menu CSS */
+.hide {
+    display: none;
+}
+.change .bar1 {
+    transform: translate(0, 9px) rotate(-45deg);
+}
+.change .bar2 {
+    opacity: 0;
+}
+.change .bar3 {
+    transform: translate(0, -9px) rotate(45deg);
 }
 
 /* Main CSS */
@@ -44,11 +69,36 @@ main {
     padding-bottom: 15px;
 }
 .gallery img {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
-    border: 5px solid white;
-    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    background-color: white;
+    box-shadow: 5px 5px 15px black;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Modal */
+dialog {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: rgba(0,0,0,.75);
+}
+dialog img {
+    width: 90%;
+    display: block;
+    margin: 20vh auto;
+    max-width: 700px;
+}
+.close-viewer {
+    position: absolute;
+    top: 10vh;
+    right: 30vh;
+    padding: 3px 6px;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 
 /* Footer CSS */
@@ -64,13 +114,13 @@ footer {
     }
     nav {
         display: none;
+        flex-direction: column;
+    }
+    nav.show {
+        display: flex;
     }
     .menu-btn {
         display: block;
-        background: none;
-        color: white;
-        font-size: 18px;
-        margin-top: 10px;
     }
 }
 
@@ -79,14 +129,7 @@ footer {
     .gallery {
         grid-template-columns: 1fr;
     }
-    nav {
-        display: none;
-    }
-    .menu-btn {
-        display: block;
-        background: none;
-        color: white;
-        font-size: 18px;
-        margin-top: 10px;
+    nav a {
+        padding: 15px;
     }
 }
