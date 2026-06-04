@@ -1,32 +1,33 @@
-const form = document.querySelector("#fsyForm");
-const travelRange = document.querySelector("#travelRange");
-const notesContainer = document.querySelector("#notesContainer");
-const notes = document.querySelector("#notes");
-const output = document.querySelector("#output");
-const campusBoxes = document.querySelectorAll('input[name="campus"]');
+const form = document.getElementById('eventForm');
+const typeSelect = document.getElementById('type');
+const studentContainer = document.getElementById('studentID');
+const studentNumber = document.getElementById('studentNumber');
+const accessContainer = document.getElementById('accessCode');
+const accessInput = document.getElementById('accessCodeInput');
+const out = document.getElementById('output');
 
 function updateNotesField() {
-  const value = travelRange.value;
+  const value = typeSelect.value;
 
-  // Show the travel notes on the form if they are choosing many campuses and require it
-  if (value === "many") {
-    notesContainer.removeAttribute("hidden");
-    notes.setAttribute("required", "");
+  if (value === "guest") {
+    accessContainer.hidden = false;
+    accessInput.required = true;
+    studentContainer.hidden = true;
+    studentNumber.required = false;
+  } else if (value === "student") {
+    studentContainer.hidden = false;
+    studentNumber.required = true;
+    accessContainer.hidden = true;
+    accessInput.required = false;
   } else {
-    notesContainer.setAttribute("hidden", "");
-    notes.removeAttribute("required");
+    studentContainer.hidden = true;
+    accessContainer.hidden = true;
+    studentNumber.required = false;
+    accessInput.required = false;
   }
 }
 
-    // if (value === "many") {
-    //notesContainer.hidden = false;
-    //notes.required = true;
-  //} else {
-    //notesContainer.hidden = true;
-    //notes.required = false;
-  //}
-
-travelRange.addEventListener("change", updateNotesField);
+typeSelect.addEventListener("change", updateNotesField);
 updateNotesField();
 
 
@@ -34,14 +35,13 @@ updateNotesField();
 function isPastDate(value) {
   const today = new Date();
   const chosen = new Date(value);
-  return chosen < today;
+  today.setHours(0, 0, 0, 0);
+  chosen.setHours(0, 0, 0, 0);
+  return chosen <= today;
 }
 
-function getSelectedCampuses() {
-  //.from converts a NodeList into a real array, so then you can use .filter and .map
-  return Array.from(campusBoxes)
-    .filter(box => box.checked)
-    .map(box => box.value); 
+function getSelectedType() {
+  return typeSelect.value;
 }
 
 form.addEventListener("submit", function (event) {
@@ -51,34 +51,33 @@ form.addEventListener("submit", function (event) {
   const firstName = form.firstName.value.trim();
   const lastName = form.lastName.value.trim();
   const email = form.email.value.trim();
-  const type = form.travelRange.value;
+  const type = typeSelect.value;
   const availableDate = form.availableDate.value;
-  const selectedCampuses = getSelectedCampuses();
-  const note = form.notes.value.trim();
+  const selectedType = getSelectedType();
+  let note = "";
+  if (type === "student" && studentNumber) note = studentNumber.value.trim();
+  if (type === "guest" && accessInput) note = accessInput.value.trim();
 
   // Validate the input
-  // Let the user know to select at least one campus
-  if (selectedCampuses.length === 0) {
-    output.textContent = "Please select at least one campus.";
+  // Let the user know to select at least a type
+  if (!selectedType) {
+    output.textContent = "Please select type";
     return;
   }
-  
-  // Let the user know if they choose many campuses but didn't put a note that they need to add a note  
-  if (type === "many" && note === "") {
-    output.textContent = "Please provide a note explaining your travel between campuses.";
-    return;
-  }
-
-  //Let the user know if they choose many campus but only had one campus selected that they need to choose at least two campuses
-  if (type === "many" && selectedCampuses.length < 2) {
-    output.textContent = "Please select at least two campuses";
-    return;
-  }
-
-
   if (isPastDate(availableDate)) {
     output.textContent = "Please choose a later date.";
     return;
+  }
+  if (type === "student") {
+    if (!/^\d{9}$/.test(note)) {
+      return out.textContent = 'Student I# must be 9 digits';
+    }
+  }
+
+  if (type === 'guest') {
+    if (((accessInput.value || '').trim().toUpperCase()) !== 'EVENT131') {
+      return out.textContent = 'Access Code is incorrect.';
+    }
   }
 
   output.innerHTML = `
@@ -86,8 +85,7 @@ form.addEventListener("submit", function (event) {
   <p>${firstName} ${lastName}</p>
   <p>Email: ${email}</p>
   <p>Availability: ${availableDate}</p>
-  <p>Campuses: ${selectedCampuses.join(", ")}</p>
-  <p>Preference Level: ${type}</p>
+  <p>Type: ${selectedType}</p>
   `;
 
   form.reset();
