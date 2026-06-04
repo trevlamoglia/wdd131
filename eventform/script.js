@@ -4,7 +4,7 @@ const studentContainer = document.getElementById('studentID');
 const studentNumber = document.getElementById('studentNumber');
 const accessContainer = document.getElementById('accessCode');
 const accessInput = document.getElementById('accessCodeInput');
-const out = document.getElementById('output');
+const output = document.getElementById('output');
 
 function updateNotesField() {
   const value = typeSelect.value;
@@ -40,10 +40,6 @@ function isPastDate(value) {
   return chosen <= today;
 }
 
-function getSelectedType() {
-  return typeSelect.value;
-}
-
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   output.textContent = "";
@@ -53,14 +49,11 @@ form.addEventListener("submit", function (event) {
   const email = form.email.value.trim();
   const type = typeSelect.value;
   const availableDate = form.availableDate.value;
-  const selectedType = getSelectedType();
   let note = "";
   if (type === "student" && studentNumber) note = studentNumber.value.trim();
   if (type === "guest" && accessInput) note = accessInput.value.trim();
 
-  // Validate the input
-  // Let the user know to select at least a type
-  if (!selectedType) {
+  if (!type) {
     output.textContent = "Please select type";
     return;
   }
@@ -70,13 +63,13 @@ form.addEventListener("submit", function (event) {
   }
   if (type === "student") {
     if (!/^\d{9}$/.test(note)) {
-      return out.textContent = 'Student I# must be 9 digits';
+      return output.textContent = 'Student I# must be 9 digits';
     }
   }
 
   if (type === 'guest') {
     if (((accessInput.value || '').trim().toUpperCase()) !== 'EVENT131') {
-      return out.textContent = 'Access Code is incorrect.';
+      return output.textContent = 'Access Code is incorrect.';
     }
   }
 
