@@ -78,7 +78,7 @@ form.addEventListener("submit", function (event) {
   <p>${firstName} ${lastName}</p>
   <p>Email: ${email}</p>
   <p>Availability: ${availableDate}</p>
-  <p>Type: ${selectedType}</p>
+  <p>Type: ${type}</p>
   `;
 
   form.reset();
