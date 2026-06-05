@@ -57,19 +57,23 @@ form.addEventListener("submit", function (event) {
     output.textContent = "Please select type";
     return;
   }
+
   if (isPastDate(availableDate)) {
     output.textContent = "Please choose a later date.";
     return;
   }
+  
   if (type === "student") {
     if (!/^\d{9}$/.test(note)) {
-      return output.textContent = 'Student I# must be 9 digits';
+      output.textContent = 'Student I# must be 9 digits';
+      return;
     }
   }
 
   if (type === 'guest') {
     if (((accessInput.value || '').trim().toUpperCase()) !== 'EVENT131') {
-      return output.textContent = 'Access Code is incorrect.';
+      output.textContent = 'Access Code is incorrect.';
+      return;
     }
   }
 
