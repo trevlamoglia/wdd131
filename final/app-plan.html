@@ -1,0 +1,71 @@
+MakeBakeTake Project Plan
+Trevor Lamoglia
+WDD 131
+Overview
+Purpose
+Make Bake Take website is to provide an interactive platform where users can design custom clay keychains, view product examples, and submit custom order requests.
+
+Audience
+Teenagers, young adults, and anyone interested in handmade custom clay keychains and personalized gifts.
+
+Dynamic elements
+- Live preview that updates when user selects a shape or color
+- Simple add to cart button with item counter
+- Basic form that collects user name, email, and design request
+- Form validation to ensure required fields are filled out before submission
+
+Branding
+Website Logo
+<img src="images/mbt_logo.jpg" alt="Make Bake Take Logo" width="200">
+
+Style Guide
+Color Palette
+Palette URL: https://coolors.co/f44c7f-3ea26e-59b2f4-f7f7df
+Primary Color: #f44c7f
+Secondary Color: #3ea26e
+Accent Color: #59b2f4
+Background Color: #f7f7df
+
+Pseudocode for your project
+When page loads:
+    Display default keychain preview
+    Cart counter set to 0
+
+When user selects a shape:
+    Preview the image
+
+When user selects a color:
+    Preview style or color
+
+When user clicks "Add to Cart":
+    Increase cart counter by 1
+
+When user opens order form page:
+    Allow user to enter name, email, and design request
+
+When user submits form:
+    If required fields are empty:
+        Show error message
+    Else:
+        Show success message and reset form
+
+Wireframes
+index.html
+- Header with logo and navigation links
+- Hero section with title and short description
+- Main section
+- Keychain design tool
+    - Shape selection
+    - Color selection
+    - Text input field
+    - Add to cart button
+- Product display
+
+order.html
+- Header with navigation links
+- Custom order form
+    - Name input
+    - Email input
+    - Design request text area
+    - Submit button
+- Success/error message display
