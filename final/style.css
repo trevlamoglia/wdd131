@@ -93,7 +93,7 @@ section h2 {
 /* Products CSS */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     gap: 1.5rem;
 }
 .product-card {
@@ -132,7 +132,7 @@ section h2 {
 /* Event CSS */
 .event-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
 
