@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MakeBakeTake creates handmade custom clay keychains designed by you and crafted with care.">
+    <title>MakeBakeTake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <img src="images/mbt_logo.jpg" alt="MakeBakeTake Logo">
+            <h1>Make &bull; Bake &bull; Take</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#featured">Designs</a></li>
+                <li>Cart(<span id="cart-count">0</span>)</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Handmade Custom Clay Keychains</h2>
+            <p>
+                Browse our handmade clay keychains, choose your favorite design,
+                and submit a custom order request.
+            </p>
+            <a href="#featured" class="btn">Browse Designs</a>
+        </section>
+
+        <section id="featured" class="featured">
+            <h2>Featured Designs</h2>
+            <p>Choose a design below to view more details and add it to your cart.</p>
+            <div id="product-container" class="product-grid">
+                <!-- Products added with JavaScript -->
+            </div>
+        </section>
+
+        <section class="featured-design">
+            <h2>Selected Design</h2>
+            <div id="featured-product">
+                <img 
+                    id="preview-image" 
+                    src="images/heart.jpg" 
+                    alt="Selected keychain">
+                <h3 id="preview-name"></h3>
+                <p id="preview-price"></p>
+                <p id="preview-description"></p>
+            </div>
+            <button 
+                type="button" 
+                id="cart-btn" 
+                class="btn">
+                Add to Cart
+            </button>
+        </section>
+
+        <section class="events">
+            <h2>Events & Custom Creations</h2>
+            <p>Check out some of our handmade creations from past events and custom orders.</p>
+            <div class="event-gallery">
+                <img src="images/event1.jpg" alt="MakeBakeTake booth at an event">
+                <img src="images/custom_orders1.JPG" alt="Custom clay keychains created for customers">
+                <img src="images/custom_orders2.JPG" alt="Custom clay keychains created for customers">
+            </div>
+        </section>
+
+        <section id="order" class="order-form">
+            <h2>Custom Order Request</h2>
+            <p>Fill out the form below to submit your custom keychain request.</p>
+            <form id="orderForm">
+                <label for="name">Name:</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name"
+                    required>
+
+                <label for="email">Email:</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    required>
+
+                <label for="design">Choose a Design:</label>
+                <select 
+                    id="design" 
+                    name="design"
+                    required>
+                    <option value="">
+                        Select a design
+                    </option>
+                </select>
+
+                <label for="quantity">Quantity:</label>
+                <input 
+                    type="number" 
+                    id="quantity" 
+                    name="quantity"
+                    min="1"
+                    max="10"
+                    value="1"
+                    required>
+
+                <label for="details">
+                    Design Details:
+                </label>
+                <textarea 
+                    id="details"
+                    name="details"
+                    placeholder="Describe your custom keychain idea">
+                </textarea>
+                <button 
+                    type="submit"
+                    class="btn">
+                    Submit Request
+                </button>
+            </form>
+            <p id="form-message" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social">
+            <a href="https://www.instagram.com/makebaketake.ibc/">
+                <img src="images/Instagram_Glyph_Gradient.png" alt="Instagram">
+            </a>
+        </div>
+        <p>&copy; 2026 MakeBakeTake. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

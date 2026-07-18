@@ -1,76 +1,97 @@
 MakeBakeTake Project Plan
 Trevor Lamoglia
 WDD 131
+
 Overview
+
 Purpose
-Make Bake Take website is to provide an interactive platform where users can design custom clay keychains, view product examples, and submit custom order requests.
+The MakeBakeTake website provides an interactive platform where users can browse handmade clay keychains, view product details, add products to a cart counter, and submit a custom order request.
 
 Audience
 Teenagers, young adults, and anyone interested in handmade custom clay keychains and personalized gifts.
 
 Dynamic elements
-- Live preview that updates when user selects a shape or color
-- Simple add to cart button with item counter
-- Basic form that collects user name, email, and design request
-- Form validation to ensure required fields are filled out before submission
-- Random design button that generates a random keyhchain design
+- Featured product preview updates when a user selects a keychain.
+- Product cards are dynamically displayed using JavaScript.
+- Add to Cart button updates the cart counter.
+- Custom order form collects the user's name, email, selected design, quantity, and design details.
+- Form validation checks that required fields are completed before submission.
 
 Branding
 Website Logo
-<img src="images/mbt_logo.jpg" alt="Make Bake Take Logo" width="50">
+<img src="images/mbt_logo.jpg" alt="Make Bake Take Logo" width="75">
 
 Style Guide
 Color Palette
 Palette URL: https://coolors.co/f44c7f-3ea26e-59b2f4-f7f7df
+
 Primary Color: #f44c7f
 Secondary Color: #3ea26e
 Accent Color: #59b2f4
 Background Color: #f7f7df
 
-Pseudocode for your project
+
+Pseudocode
 When page loads:
-    Display default keychain preview
-    Cart counter set to 0
+    Display all featured products
+    Display the default featured keychain
+    Set cart counter to 0
+    Load product options into order form
 
-When user selects a shape:
-    Preview the image
-
-When user selects a color:
-    Preview style or color
+When user selects a featured product:
+    Update the featured product image
+    Update the product name
+    Update the product price
+    Update the product description
 
 When user clicks "Add to Cart":
     Increase cart counter by 1
+    Update cart display
 
-When user clicks "Random Design":
-    Randomly select a shape and color
-    Update preview with random design
+When user submits the order form:
+    If required fields are empty:
+        Display an error message
+    Else:
+        Display a success message
+        Reset the form
 
-When user opens order form page:
-    Allow user to enter name, email, and design request
-
-When user submits form:
-    if required fields are empty:
-        show error message
-    else:
-        show success message and reset form
 
 Wireframes
 index.html
-- Header with logo and navigation links
-- Hero section with title and short description
-- Main section
-- Keychain design tool
-    - Shape selection
-    - Color selection
-    - Text input field
-    - Add to cart button
-- Product display
+- Header
+    - Logo
+    - Navigation links
+        - Designs
+        - Order
+        - Cart counter
 
-order.html
-- Header with navigation links
-- Custom order form
+- Hero Section
+    - Website title
+    - Short description
+    - Browse Designs button
+
+- Featured Designs Section
+    - Product cards generated with JavaScript
+    - Product image
+    - Product name
+    - Product information
+
+- Selected Design Section
+    - Large product image
+    - Product name
+    - Price
+    - Description
+    - Add to Cart button
+
+- Custom Order Form
     - Name input
     - Email input
-    - Design request text area
+    - Select design dropdown
+    - Quantity input
+    - Design details textarea
     - Submit button
-- Success/error message display
+    - Success/error message
+
+- Footer
+    - Social media link
+    - Copyright information

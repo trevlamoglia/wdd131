@@ -1,0 +1,223 @@
+/* Global CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary: #f44c7f;
+    --secondary: #3ea26e;
+    --accent: #59b2f4;
+    --background: #f7f7df;
+    --text: #333333;
+    --white: #ffffff;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Header CSS */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.brand img {
+    width: 70px;
+}
+.brand h1 {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+/* Nav CSS */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+}
+nav a:hover {
+    color: var(--primary);
+}
+
+/* Main CSS */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+/* Section CSS */
+section {
+    margin-bottom: 2rem;
+}
+section h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Hero CSS */
+.hero {
+    padding: 2rem;
+    text-align: center;
+}
+.hero h2 {
+    font-size: 2.5rem;
+}
+.hero p {
+    max-width: 700px;
+    margin: 1rem auto;
+}
+
+/* Products CSS */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 1.5rem;
+}
+.product-card {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+.product-card img {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.product-card h3 {
+    color: var(--primary);
+    margin-bottom: .5rem;
+}
+
+/* Design CSS */
+.featured-design {
+    margin-top: 3rem;
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+.featured-design img {
+    width: 250px;
+    margin: auto;
+}
+.featured-design .btn{
+    margin: .5rem;
+}
+
+/* Event CSS */
+.event-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.event-gallery img {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.event-gallery img:hover {
+    transform: scale(1.05);
+}
+/* Button CSS */
+.btn {
+    display: inline-block;
+    padding: .8rem 1.5rem;
+    background: var(--secondary);
+    color: var(--white);
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn:hover {
+    background: var(--accent);
+}
+
+/* ORDER FORM CSS */
+.order-form {
+    max-width: 600px;
+    margin: auto;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+}
+.order-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.order-form input,
+.order-form select {
+    padding: .8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.order-form textarea {
+    padding: .8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Footer CSS */
+footer {
+    background: var(--white);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+footer img {
+    height: 30px;
+    width: auto;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) { 
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .brand {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: .75rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
