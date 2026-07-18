@@ -24,10 +24,7 @@
     <main>
         <section class="hero">
             <h2>Handmade Custom Clay Keychains</h2>
-            <p>
-                Browse our handmade clay keychains, choose your favorite design,
-                and submit a custom order request.
-            </p>
+            <p>Browse our handmade clay keychains, choose your favorite design, and submit a custom order request.</p>
             <a href="#featured" class="btn">Browse Designs</a>
         </section>
 
@@ -35,27 +32,19 @@
             <h2>Featured Designs</h2>
             <p>Choose a design below to view more details and add it to your cart.</p>
             <div id="product-container" class="product-grid">
-                <!-- Products added with JavaScript -->
+
             </div>
         </section>
 
         <section class="featured-design">
             <h2>Selected Design</h2>
             <div id="featured-product">
-                <img 
-                    id="preview-image" 
-                    src="images/heart.jpg" 
-                    alt="Selected keychain">
+                <img id="preview-image" src="images/heart.jpg" alt="Selected keychain">
                 <h3 id="preview-name"></h3>
                 <p id="preview-price"></p>
                 <p id="preview-description"></p>
             </div>
-            <button 
-                type="button" 
-                id="cart-btn" 
-                class="btn">
-                Add to Cart
-            </button>
+            <button type="button" id="cart-btn" class="btn">Add to Cart</button>
         </section>
 
         <section class="events">
@@ -63,8 +52,8 @@
             <p>Check out some of our handmade creations from past events and custom orders.</p>
             <div class="event-gallery">
                 <img src="images/event1.jpg" alt="MakeBakeTake booth at an event">
-                <img src="images/custom_orders1.JPG" alt="Custom clay keychains created for customers">
-                <img src="images/custom_orders2.JPG" alt="Custom clay keychains created for customers">
+                <img src="images/custom_orders1.jpg" alt="Custom clay keychains created for customers">
+                <img src="images/custom_orders2.jpg" alt="Custom clay keychains created for customers">
             </div>
         </section>
 
@@ -73,52 +62,22 @@
             <p>Fill out the form below to submit your custom keychain request.</p>
             <form id="orderForm">
                 <label for="name">Name:</label>
-                <input 
-                    type="text" 
-                    id="name" 
-                    name="name"
-                    required>
+                <input type="text" id="name" name="name" required>
 
                 <label for="email">Email:</label>
-                <input 
-                    type="email" 
-                    id="email" 
-                    name="email"
-                    required>
+                <input type="email" id="email" name="email" required>
 
                 <label for="design">Choose a Design:</label>
-                <select 
-                    id="design" 
-                    name="design"
-                    required>
-                    <option value="">
-                        Select a design
-                    </option>
+                <select id="design" name="design" required>
+                    <option value="">Select a design</option>
                 </select>
 
                 <label for="quantity">Quantity:</label>
-                <input 
-                    type="number" 
-                    id="quantity" 
-                    name="quantity"
-                    min="1"
-                    max="10"
-                    value="1"
-                    required>
+                <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
 
-                <label for="details">
-                    Design Details:
-                </label>
-                <textarea 
-                    id="details"
-                    name="details"
-                    placeholder="Describe your custom keychain idea">
-                </textarea>
-                <button 
-                    type="submit"
-                    class="btn">
-                    Submit Request
-                </button>
+                <label for="details">Design Details:</label>
+                <textarea id="details" name="details" placeholder="Describe your custom keychain idea" required></textarea>
+                <button type="submit" class="btn"> Submit Request</button>
             </form>
             <p id="form-message" aria-live="polite"></p>
         </section>
