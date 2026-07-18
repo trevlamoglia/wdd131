@@ -141,12 +141,8 @@ section h2 {
     max-width: 350px;
     margin: 0 auto;
     border-radius: 10px;
-    transition: transform 0.3s ease;
 }
 
-.event-gallery img:hover {
-    transform: scale(1.05);
-}
 /* Button CSS */
 .btn {
     display: inline-block;
